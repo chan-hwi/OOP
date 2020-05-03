@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <iomanip>
 #include <ctime>
 
@@ -12,5 +13,6 @@ int main() {
 	for (int i = 0; i < 3; i++) {
 		cout << rand() / 32767.0 << ' ';
 	}
+	cout << endl;
 	return 0;
 }
