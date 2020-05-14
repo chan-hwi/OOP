@@ -7,15 +7,8 @@ int main()
 {
 	int a, b;
 	cin >> a >> b; // receiving inputs
-	if (a > b) {
-		cout << 0 << endl;
-	} else {
-		int sum = 0;
-		for (int i = a; i <= b; i++) {  // finding sum of numbers between a and b
-			sum += i;
-		}
-		cout << sum << endl;
-	}
+	if (a > b) cout << 0 << '\n';
+	else cout << (a+b)*(b-a+1)/2 << '\n'; // Finding sum of a ~ b using Gaussian sum
 	return 0;
 }
 

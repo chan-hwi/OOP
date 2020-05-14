@@ -14,6 +14,6 @@ int main() {
 	cout << setprecision(6);
 
 	// finding square root of num
-	cout << pow(num, 0.5);
+	cout << sqrt(num);
 	return 0;
 }
