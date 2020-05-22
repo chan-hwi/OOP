@@ -8,7 +8,7 @@ int main() {
 	cin >> word;
 	
 	fstream inFile;
-	inFile.open("Input.txt", ios::in);
+	inFile.open("Paragraph.txt", ios::in);
 	
 	int count = 0;
 	string str;
