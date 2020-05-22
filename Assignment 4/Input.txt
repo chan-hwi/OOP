@@ -1,1 +1,6 @@
-We investigate filter level sparsity that emerges in convolutional neural networks (CNNs) which employ Batch Normalization and ReLU activation and are trained with adaptive gradient descent techniques and L2 regularization or weight decay We conduct an extensive experimental study casting our initial findings into hypotheses and conclusions about the mechanisms underlying the emergent filter level sparsity This study allows new insight into the performance gap observed between adaptive and nonadaptive gradient descent methods in practice Further analysis of the effect of training strategies and hyperparameters on the sparsity leads to practical suggestions in designing CNN training strategies enabling us to explore the tradeoffs between feature selectivity network capacity and generalization performance Lastly we show that the implicit sparsity can be harnessed for neural network speedup at par or better than explicit sparsification pruning approaches with no modifications to the typical training pipeline required
+5
+5 50 50 70 80 100
+7 100 95 90 80 70 60 50
+3 70 90 80
+3 70 90 81
+9 100 99 98 97 96 94 93 92 91
