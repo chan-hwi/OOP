@@ -5,7 +5,7 @@
 using namespace std;
 
 string myIntegerToBinary(int n) {
-	if (n <= 1) return to_string(n % 2);  // Base case(termination condition) - Could not be divided by 2
+	if (n <= 1) return to_string(n);  // Base case(termination condition) - Could not be divided by 2
 	return myIntegerToBinary(n / 2) + to_string(n % 2);  // Recursive case - Add remainder at the end of the next call's return value and return it
 }
 
