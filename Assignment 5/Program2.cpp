@@ -1,3 +1,4 @@
+//20191339 ChanhwiHwang
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -22,8 +23,8 @@ int main() {
 	
 	int num;
 	inFile >> num;  // Read an integer from input file stream
-	outFile << myFibonacci(num) << '\n';  // Write the return value of the function to output file stream
 	inFile.close();
+	outFile << myFibonacci(num) << '\n';  // Write the return value of the function to output file stream
 	outFile.close();
 	
 	return 0;
