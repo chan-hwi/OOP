@@ -51,6 +51,7 @@ int main() {
 			outFile.close();
 			return -1;
 		}
+		inFile.clear();
 		inFile.seekg(curIndex, ios::beg);
 		inFile >> nums[index++];
 		count++;
