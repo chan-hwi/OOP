@@ -7,7 +7,8 @@ using namespace std;
 bool is_number(string str) {
 	int dotCount = 0;
 	for (int i = 0; i < str.size(); i++) {
-		if (i == 0 && str[0] == '-') continue;
+		if (i == 0)
+			if (str[0] == '-' || str[0] == '+') continue;
 		if (!isdigit(str[i]) && str[i] != '.') return false;
 		if (str[i] == '.') {
 			if (i == 0 || i == str.size() - 1) return false;
@@ -31,6 +32,7 @@ int main() {
 	inFile1.open("Program2InputA.txt", ios::in);
 	inFile2.open("Program2InputB.txt", ios::in);
 	outFile.open("Program2Output20191339.txt", ios::out);
+	
 	
 	if (inFile1.fail() || inFile2.fail()) {
 		exitWithError(0);
@@ -76,6 +78,8 @@ int main() {
 		}
 	}
 	inFile2.close();
+	
+	outFile << rowA << ' ' << colB << '\n';
 	
 	outFile << setprecision(6);
 	outFile << fixed;

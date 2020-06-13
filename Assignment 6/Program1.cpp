@@ -8,16 +8,17 @@ void mySwap(double& num1, double& num2) {
 	num2 = num1;
 	num1 = temp;
 }
-void mySwap(string& str1, string& str2) {
-	string temp = str2;
-	str2 = str1;
-	str1 = temp;
-}
+//void mySwap(string& str1, string& str2) {
+//	string temp = str2;
+//	str2 = str1;
+//	str1 = temp;
+//}
 
 bool is_number(string str) {
 	int dotCount = 0;
 	for (int i = 0; i < str.size(); i++) {
-		if (i == 0 && str[0] == '-') continue;
+		if (i == 0)
+			if (str[0] == '-' || str[0] == '+') continue;
 		if (!isdigit(str[i]) && str[i] != '.') return false;
 		if (str[i] == '.') {
 			if (i == 0 || i == str.size() - 1) return false;
@@ -39,13 +40,16 @@ int main() {
 		return -1;
 	}
 	int index = 0, count = 0;
-	string temp[50];
+//	string temp[50];
+	string temp;
 	double nums[50];
 	
+	int curIndex = inFile.tellg();
+//	inFile >> temp[index];
+	inFile >> temp;
 	while (!inFile.eof()) {
-		int curIndex = inFile.tellg();
-		inFile >> temp[index];
-		if (!is_number(temp[index])) {
+//		if (!is_number(temp[index])) {
+		if (!is_number(temp)) {
 			outFile << "Error#1" << '\n';
 			inFile.close();
 			outFile.close();
@@ -55,6 +59,9 @@ int main() {
 		inFile.seekg(curIndex, ios::beg);
 		inFile >> nums[index++];
 		count++;
+		curIndex = inFile.tellg();
+//		inFile >> temp[index];
+		inFile >> temp;
 	}
 	inFile.close();
 	
@@ -63,13 +70,14 @@ int main() {
 		for (int j = i + 1; j < count; j++) {
 			if (nums[i] > nums[j]) {
 				mySwap(nums[i], nums[j]);
-				mySwap(temp[i], temp[j]);
+//				mySwap(temp[i], temp[j]);
 			}
 		}
 	}
 	
 	for (int i = 0; i < count; i++) {
-		outFile << temp[i] << (i == count-1 ? "" : " ");
+//		outFile << temp[i] << (i == count-1 ? "" : " ");
+		outFile << nums[i] << (i == count-1 ? "" : " ");
 	}
 	
 	outFile.close();
