@@ -18,6 +18,9 @@ void mySwap(string& str1, string& str2) {  // mySwap function to swap two string
 bool is_number(string str) {  // Determine whether str is real-valued number
 	int dotCount = 0;  // number of dot in str
 	for (int i = 0; i < str.length(); i++) {
+		if (str.length() == 1)  // When the length of string is 1, it should be 0-9 number
+			if (isdigit(str[0])) return true;
+			else return false;
 		if (i == 0)
 			if (str[0] == '-' || str[0] == '+') continue;  // Sign at the front is OK
 		if (!isdigit(str[i]) && str[i] != '.') return false;  // Special Characters are not allowed
@@ -41,6 +44,7 @@ int main() {
 		outFile.close();
 		return -1;
 	}
+	
 	int count = 0;  // A variable to store the number of inputs and refer to current index
 	// Define arrays to store inputs as itself(temp) and as numbers(nums)
 	string temp[50];
