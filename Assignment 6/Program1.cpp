@@ -50,9 +50,9 @@ int main() {
 	string temp[50];
 	double nums[50];
 	
-	int curIndex = inFile.tellg();  // Store current cursor location
-	inFile >> temp[count];
 	while (!inFile.eof()) {  // Check if the current input is number
+		int curIndex = inFile.tellg();  // Store current cursor location
+		inFile >> temp[count];
 		if (!is_number(temp[count])) {  // There's non-number string -> error case #1
 			outFile << "Error#1" << '\n';
 			inFile.close();
@@ -68,9 +68,6 @@ int main() {
 		inFile.clear();
 		inFile.seekg(curIndex, ios::beg);
 		inFile >> nums[count++];  // Update the number of inputs
-		// Read next input and store new cursor location
-		curIndex = inFile.tellg();
-		inFile >> temp[count];
 	}
 	inFile.close();
 	
